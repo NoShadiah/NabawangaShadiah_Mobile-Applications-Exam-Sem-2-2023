@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:studentapp/main.dart';
+import 'package:studentapp/homeScreen.dart';
+
 
 class AboutScreen extends StatelessWidget {
   AboutScreen(
       {super.key,
       required this.name,
       required this.email,
-      required this.studentNumber});
+      required this.studentNumber
+      }
+    );
   String name = "......";
   String email = "......";
   String studentNumber = "......";
@@ -96,7 +99,7 @@ class AboutScreen extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) =>
-                                    MyHomeScreen(title: "Student App"),
+                                    HomeScreen(title: "Student App"),
                               ));
                         },
                         child: Text("close")),
@@ -106,7 +109,7 @@ class AboutScreen extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) =>
-                                    MyHomeScreen(title: "Student App"),
+                                    HomeScreen(title: "Student App"),
                               ));
                         },
                         child: Text("update"))
