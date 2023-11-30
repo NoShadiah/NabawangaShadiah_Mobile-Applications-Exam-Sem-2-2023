@@ -17,7 +17,16 @@ class _HomeScreenState extends State<HomeScreen> {
   String studentNumber = "2022/DCSE/023/SS:";
   String studentGrade = "A";
   int studentage = 20;
+
   String? studentDetails = "Student Details:";
+
+  // new student details
+
+  String student1name = "";
+  String student1email = "";
+  String student1Number = "";
+  String student1Grade = "";
+  String student1age = "";
 
 // An instance of the student class
   Student student1 = Student();
@@ -30,9 +39,11 @@ class _HomeScreenState extends State<HomeScreen> {
       student1.setname("John Doe");
       student1.set_age(20);
       student1.set_Grade("A");
-      
+
       // getting student details
-      student1
+      student1name = student1.get_age();
+      student1Grade = student1.get_grade();
+      student1age = student1.get_age();
     });
   }
 
@@ -51,9 +62,9 @@ class _HomeScreenState extends State<HomeScreen> {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
+        leading: null,
         backgroundColor: const Color.fromARGB(255, 0, 76, 139),
         title: Text(widget.title),
-        leading: null,
       ),
       body: Center(
         child: Column(
@@ -65,11 +76,11 @@ class _HomeScreenState extends State<HomeScreen> {
               size: 90,
             ),
             const Text(
-              'Click the button to show student details',
+              'Click the button to show student details, when you click the button below you will be creating a new instance of the student class',
               style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
-                  fontSize: 20),
+                  fontSize: 22),
             ),
 
             const SizedBox(
@@ -99,6 +110,42 @@ class _HomeScreenState extends State<HomeScreen> {
                       color: Colors.black,
                       fontSize: 20,
                       fontWeight: FontWeight.normal),
+                ),
+                Text("Student instance details"),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text("Name:"),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Text("      $student1name ")
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text("Age:"),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Text("      $student1age ")
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text("Grade: "),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Text("      $student1Grade ")
+                      ],
+                    ),
+                  ],
                 ),
                 ElevatedButton(
                     // style: ,

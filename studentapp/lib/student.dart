@@ -1,10 +1,10 @@
 class Student {
   Student();
-  String _name = "......";
-  String _email = "......";
-  String _studentNumber = "......";
+  String _name = "";
+  String _email = "";
+  String _studentNumber = "";
   int _age = 0;
-  String _grade = "A";
+  String _grade = "";
 
   String getname() {
     return _name;
@@ -22,6 +22,9 @@ class Student {
     return '$_age';
   }
 
+  String get_grade() {
+    return _grade;
+  }
 
   // setters
   void setname(String name) {
