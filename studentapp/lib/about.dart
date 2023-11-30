@@ -16,7 +16,8 @@ class AboutScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return SafeArea(
+      child: Scaffold(
         appBar: AppBar(
           leading: null,
           backgroundColor: Color.fromARGB(255, 0, 4, 119),
@@ -25,8 +26,7 @@ class AboutScreen extends StatelessWidget {
             style: TextStyle(color: Colors.white),
           ),
         ),
-        body: SafeArea(
-            child: Center(
+        body: Center(
           child: Padding(
             padding: EdgeInsets.only(left: 20, top: 20, right: 20),
             child: Column(
@@ -121,6 +121,9 @@ class AboutScreen extends StatelessWidget {
               ],
             ),
           ),
-        )));
+        )
+        
+        )
+    );
   }
 }

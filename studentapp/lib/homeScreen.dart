@@ -1,7 +1,7 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:studentapp/task2.dart';
+import 'package:studentapp/about.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({super.key, required this.title});
@@ -20,7 +20,8 @@ class _HomeScreenState extends State<HomeScreen> {
   String studentNumber = "2022/DCSE/023/SS:";
   String studentage = "20";
   String? studentDetails = "Student Details:";
-  
+
+
 
   
 
@@ -43,15 +44,18 @@ class _HomeScreenState extends State<HomeScreen> {
     // This method is rerun every time setState is called, for instance as done
     // by the showdetails method above.
 
-    return Scaffold(
+    return SafeArea(
+      child: Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 0, 76, 139),
         title: Text(widget.title),
+        leading: null,
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+             Icon(Icons.school, color: Color.fromARGB(255, 92, 29, 2),size: 90,),
             const Text(
               'Click the button to show student details', style: TextStyle(
                 color: Colors.black, 
@@ -59,6 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 fontSize: 20
               ),
             ),
+           
 
             const SizedBox(
               height: 20,
@@ -71,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ,
                 child: Text(
                   "$buttonLabel",
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
                 )),
             //
             SizedBox(
@@ -83,7 +88,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 // if(buttonLabel=="Hide Details")
                 Text(
                   '$studentDetails',
-                  style: Theme.of(context).textTheme.headlineMedium,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.normal
+                  ),
                 ),
                   ElevatedButton(
                   // style: ,
@@ -100,6 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       // This trailing comma makes auto-formatting nicer for build methods.
-    );
+    ) 
+      );
   }
 }
